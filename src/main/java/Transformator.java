@@ -14,6 +14,7 @@ import org.neo4j.tooling.GlobalGraphOperations;
  * Transformiert auf neo4j basierende GraphDataSets
  * in .DOT format (ohne subgraph)
  *
+ *
  * @author gomezk
  */
 public class Transformator extends Thread {
