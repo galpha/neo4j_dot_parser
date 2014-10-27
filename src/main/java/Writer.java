@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.neo4j.graphdb.Direction;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
@@ -12,10 +13,9 @@ import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
 /**
- *
  * @author gomezk
  */
-public class Writer{
+public class Writer {
 
     private GraphDatabaseService graphDB;
     private String outputFilePath;
@@ -33,17 +33,17 @@ public class Writer{
     private static final String DOT_LABEL_CLOSE = "\"]";
     private static final String DOT_LINE_ENDING = ";";
 
-    public Writer(GraphDatabaseService graphdb, String dateiname, String btg, String Path){
-        this.graphDB=graphdb;
-        this.outputFilePath=dateiname;
-        this.btg=btg;
-        this.PATH=Path;
+    public Writer(GraphDatabaseService graphdb, String dateiname, String btg, String Path) {
+        this.graphDB = graphdb;
+        this.outputFilePath = dateiname;
+        this.btg = btg;
+        this.PATH = Path;
 
     }
 
     public void write() {
         try {
-            Transformator trans = new Transformator(graphDB,btg);
+            Transformator trans = new Transformator(graphDB, btg);
             setup();
             writeDigraph(trans.prepareData());
             teardown();
@@ -51,7 +51,6 @@ public class Writer{
             System.out.print(ex);
         }
     }
-
 
 
     private void writeDigraph(Map<Long, List<Long>> btgNodesMap) throws IOException {
@@ -115,8 +114,6 @@ public class Writer{
         this.graphDB.shutdown();
         this.fileWriter.close();
     }
-
-
 
 
 }

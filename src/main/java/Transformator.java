@@ -22,17 +22,7 @@ public class Transformator extends Thread {
     private String BTG_ID;
     private GraphDatabaseService graphDB;
 
-    /**
-     * Constructorprivate static final String DOT_DIGRAPH_HEADER = "digraph";
-     private static final String DOT_BLOCK_OPEN = "{";
-     private static final String DOT_BLOCK_CLOSE = "}";
-     private static final String DOT_OUT_EDGE = "->";
-     private static final String DOT_LABEL_OPEN = "[label=\"";
-     private static final String DOT_LABEL_CLOSE = "\"]";
-     private static final String DOT_LINE_ENDING = ";";
-     *
-     * @param gDB used graphdataset
-     */
+
     public Transformator(GraphDatabaseService graphDB, String btg) {
         this.graphDB = graphDB;
         this.BTG_ID = btg;
