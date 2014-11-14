@@ -6,22 +6,22 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
  */
 public class Connection {
 
-    private GraphDatabaseService graphdb;
-    private String path;
+  private GraphDatabaseService graphdb;
+  private String path;
 
-    public Connection(String PATH) {
-        this.path = PATH;
-    }
+  public Connection(String PATH) {
+    this.path = PATH;
+  }
 
-    public GraphDatabaseService setConnection() {
-        graphdb = new GraphDatabaseFactory().newEmbeddedDatabase(path);
-        System.out.println("Connected");
-        return graphdb;
-    }
+  public GraphDatabaseService setConnection() {
+    graphdb = new GraphDatabaseFactory().newEmbeddedDatabase(path);
+    System.out.println("Connected");
+    return graphdb;
+  }
 
 
-    public void shutDown(GraphDatabaseService graphDB) {
-        graphDB.shutdown();
-        //System.out.println("closed");
-    }
+  public void shutDown(GraphDatabaseService graphDB) {
+    graphDB.shutdown();
+    //System.out.println("closed");
+  }
 }
